@@ -34,3 +34,8 @@ Whether you're a student, researcher, or just a curious mind, feel free to explo
 
 Each script is standalone and self-explanatory with inline comments.  
 Just clone the repo and run any `.py` file with Python 3.x:
+
+```bash
+git clone https://github.com/Premraj-C/SCIENTIFIC-PYTHON
+cd SCIENTIFIC-PYTHON
+python mass_spring_damper.py
