@@ -21,10 +21,10 @@ def spring_mass_sys(m,k,c,t_start,t_end,t_step):
 	v = np.zeros(len(t))
 	y[t_start] = 5
 	v[t_start] = 0
-	#function of displacement
+	#define a function for displacement
 	def f1(y,v):
 	    return  (-c*v/m - k*y/m)
-	#function of velocity
+	#define a function for velocity
 	def f2(v):
 	    return v
 
