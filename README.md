@@ -1,13 +1,13 @@
-# 🧠 Premraj's Physics-Based Simulation Solvers
+# 🧠 Premraj's work;
 
 Welcome to my growing collection of Python solvers built for simulating classical physics problems using numerical methods like **Euler Forward** and **Runge-Kutta**. These codes are a part of my self-driven journey into **Computational Fluid Dynamics (CFD)** and **Scientific Computing**, where I combine core physics intuition with numerical muscle to simulate real-world systems.
 
 ---
 
-## 🔬 What's Inside?
+🔬 What's Inside?
 
 This repository currently includes:
-- 🟡 **Ball Drop in Fluid**  
+- 🟡 **Ball Dropped in a visocus Fluid**  
   Simulates the vertical motion of a ball falling under gravity through a resistive fluid medium. Captures drag forces, velocity decay, and eventual rest.
   
 - 🟠 **Mass-Spring-Dashpot System**  
@@ -18,7 +18,7 @@ This repository currently includes:
 
 ---
 
-## 🧭 Why This Repository?
+🧭 Why This Repository?
 
 This space is my numerical physics lab. I'm building a foundation of solver code which I will eventually use to:
 - Simulate **complex fluid flow** using the **Navier-Stokes equations**
@@ -26,16 +26,4 @@ This space is my numerical physics lab. I'm building a foundation of solver code
 - Explore **fluid-structure interaction (FSI)** and **data-driven physics (ML + CFD)**
 - Test out **Physics-Informed Neural Networks (PINNs)** for solving PDEs
 
-Whether you're a student, researcher, or just a curious mind, feel free to explore, fork, and contribute. This is just the beginning.
-
----
-
-## 🛠️ How to Use
-
-Each script is standalone and self-explanatory with inline comments.  
-Just clone the repo and run any `.py` file with Python 3.x:
-
-```bash
-git clone https://github.com/Premraj-C/SCIENTIFIC-PYTHON
-cd SCIENTIFIC-PYTHON
-python mass_spring_damper.py
+Whether you're a student, researcher, or just a curious mind, feel free to explore and contribute. This is just the beginning.
