@@ -4,28 +4,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 #convective heat transfer coefficient
 h = 890 # w/m^2-*c
-c = 896 # J/kg-*c
+c = 896 # J/kg-*c      #thermal conductivity
 
-r_al = 2707 #kg/m^3
+r_al = 2707 #kg/m^3        #density of aluminum ball
 
-T0 = 150  #in *c
-T_inf = 20 
+T0 = 150  #in *c  initial temperature
+T_inf = 20    #ambient temperature
 
-t_start = 0
+t_start = 0    #time domain
 t_end  = 3  # in seconds
 
-t_step = 0.01
-n_p = (t_end - t_start)/ t_step
+t_step = 0.01  #time step
+n_p = (t_end - t_start)/ t_step    #no of mesh points
 R = 0.2 #radius in meters
-Vol_s = 4*np.pi*R**3/3
+Vol_s = 4*np.pi*R**3/3           #voume of aluminum sphere
 
-Area_s = 4*np.pi*R**2
+Area_s = 4*np.pi*R**2               #surface area of sphere
 m_s = r_al * Vol_s    # mass in kg
 tau_t = m_s*c/(h*Area_s)   #time constant tau
 
-t = np.arange(t_start, t_end+t_step, t_step)
+t = np.arange(t_start, t_end+t_step, t_step)    #time array
 
-T = np.zeros(len(t))
+T = np.zeros(len(t))         
 T[t_start] = T0
 T[t_end] = T_inf
 
