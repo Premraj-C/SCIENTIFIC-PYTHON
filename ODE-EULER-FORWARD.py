@@ -1,35 +1,52 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#ODE SOLVEER USING EULER FORWARD METHOD
-#CONSIDER THE IVP dy/dx = -x*y +13, y(0) = 0.6
+#initializing the parameters
+t_end = int(input("Enter the simulation time:"))
+t_start = 0
+n = int(input("Enter the grid no:"))
+t_step = round((t_end - t_start)/n, 2)
 
-#discretizing the domain
-x_n = 3    #domain length
-x_0 = 0   
-n = int(input("Please input grid number:") )    #domain starting point
-h = (x_n - x_0)/n            #space step, n= number of grid points
+#intialization of ode
+t0 = 3
+y0 = 4
 
-#function set up
-def f(y,x):
-    return -y*x + 13
-#intialization  as given y{3} = 4 
-x0 = 0
-y0 = 0.6
-#store the new values into this empty new arrays
-X = []
-Y = []
-#solver loop for calculating the y values
-#since it is an explicit scheme, it uses the previous value to estimate the forward value
-for i in range(n):
-    y_n = y0 + h*f(y0,x0)
-    y0 = y_n
-    x0 = x0 + h
-    X.append(x0)
-    Y.append(y_n)
-#plotting the values
-plt.plot(X,Y)
-plt.title('ODE-SOLVER')
-plt.xlabel('TIME-[SECONDS]')
-plt.ylabel('Y-[PARAMETER]')
+#defien the function
+def f(y,t):
+	return -t/y
+#give the max error for convergence
+y_vals = []
+t_vals = []
+error = 1
+error_threshold = 0.0001
+error_arr = []
+iteration = []
+count = 0
+while error > error_threshold:
+	#i = i+1
+	count = count + 1
+	y_n = y0 + t_step*f(y0,t0)
+	y0 = y_n
+	t0 = t0+ t_step
+	y_vals.append(y_n)
+	t_vals.append(t0)
+	y_act = np.sqrt(50 - 2*(t0)**2)
+	error = abs(y_act - y_n)
+	iteration.append(count)
+	error_arr.append(error)
+plt.subplot(1,2,1)
+plt.plot(t_vals,y_vals,marker='o', label='Numerical y(t)')
+plt.xlabel('y_values')
+plt.ylabel('time')
+plt.title('NUMERICAL SOLVER')
+
+plt.subplot(1,2,2)
+plt.plot(iteration, error_arr, color='red', marker='x', label='Error')
+plt.xlabel('iteration')
+plt.ylabel('error')
+plt.title('Error-record')
 plt.show()
+plt.show()
+	
+
+
